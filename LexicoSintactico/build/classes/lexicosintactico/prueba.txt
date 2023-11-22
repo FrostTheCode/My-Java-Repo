@@ -1,0 +1,11 @@
+TablasdeMultiplicar BEGIN{
+TAKE inicio;
+NUM n;
+SEND (#Introduce el Numero#;
+n=inicio;
+SEND (#Tabla del# +n);
+NUM i;
+START i=1 STEP 1 TO 10{
+SEND (n+ #x# + i+ #=# +n*i);
+}
+END};

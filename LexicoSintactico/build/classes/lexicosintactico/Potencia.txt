@@ -1,0 +1,36 @@
+Potencia BEGIN{
+TAKE BA,PO;
+NUM base=0;
+NUM potencia=0;
+NUM R=0;
+NUM C=0;
+NUM Pot=0;
+SEND(#Progama que calcula las potencias#);
+SEND(# Introduzca la Base#);
+base=BA;
+SEND(#Introduzca la Potencia#);
+potencia=PO;
+IT(potencia=0){
+R=1;
+COMPLETE}
+IT(potencia=1){
+R=base;
+C=1;
+COMPLETE}
+IT(potencia<0){
+Pot=potencia-1;
+COMPLETE}
+IT(potencia>0){
+Pot=potencia;
+COMPLETE}
+WHEN(C<Pot){
+R=R*base;
+C=C+1;
+SWHEN}
+IT(potencia<0){
+R=1/R;
+COMPLETE}
+SEND(#Pa que vean que si#);
+SEND(##+base+#^#+potencia+#=#+R);
+SEND(#Pa los chicos de Sistemas#);
+END}
